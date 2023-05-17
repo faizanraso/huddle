@@ -15,6 +15,10 @@ export default function Home() {
               The social media platform made for{" "}
               <span className="text-blue-700 underline">students.</span>{" "}
             </h1>
+            <p className="text-gray-500 text-sm mt-2">
+              huddle aims to connect current students with alumni and upper
+              years in the same program and university.
+            </p>
           </div>
           <div className="mx-auto justify-center items-center px-1 py-4 sm:px-5">
             <Image src={mockup} alt="iPhone mockup image" width={350} />
