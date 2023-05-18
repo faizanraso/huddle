@@ -11,7 +11,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between py-12 px-12 sm:px-24">
         <section className="flex flex-col">
           <div className="py-5 px-1 text-center justify-center items-center my-auto sm:px-5">
-            <h1 className="text-black text-xl font-medium">
+            <h1 className="text-black text-4xl font-semibold">
               The social media platform made for{" "}
               <span className="text-blue-700 underline">students.</span>{" "}
             </h1>
