@@ -34,7 +34,7 @@ export default function Header() {
             </Link>
 
             <Link
-              className="block inline-flex gap-1.5 rounded-lg bg-blue-600 px-4 py-3 text-xs font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring"
+              className="inline-flex gap-1.5 rounded-lg bg-blue-600 px-4 py-3 text-xs font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring"
               type="button"
               href={"/login"}
             >

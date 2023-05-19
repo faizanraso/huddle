@@ -3,9 +3,9 @@ import React from "react";
 export default function Footer() {
   return (
     <footer aria-label="Site Footer">
-      <div className="p-8 mt-6 inset-x-0 bottom-0 border-t border-gray-200 text-center sm:text-left sm:flex sm:items-center sm:justify-between">
-        <p className="text-black text-xs">Made by Faizan Rasool 👨🏽‍💻</p>
-        <ul className="flex justify-center gap-3 mt-8 sm:mt-0 lg:justify-end">
+      <div className="inset-x-0 bottom-0 mt-6 border-t border-gray-200 p-8 text-center sm:flex sm:items-center sm:justify-between sm:text-left">
+        <p className="text-xs text-black">Made by Faizan Rasool 👨🏽‍💻</p>
+        <ul className="mt-8 flex justify-center gap-3 sm:mt-0 lg:justify-end">
           <li>
             <a
               href="https://twitter.com/faizanraso"
@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="sr-only">Twitter</span>
 
               <svg
-                className="w-6 h-6"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -36,7 +36,7 @@ export default function Footer() {
               <span className="sr-only">GitHub</span>
 
               <svg
-                className="w-6 h-6"
+                className="h-6 w-6"
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 aria-hidden="true"

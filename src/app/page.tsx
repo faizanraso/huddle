@@ -8,19 +8,19 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex min-h-screen flex-col items-center justify-between py-12 px-12 sm:px-24">
+      <main className="flex min-h-screen flex-col items-center justify-between px-12 py-12 sm:px-24">
         <section className="flex flex-col">
-          <div className="py-5 px-1 text-center justify-center items-center my-auto sm:px-5">
-            <h1 className="text-black text-4xl font-semibold">
+          <div className="my-auto items-center justify-center px-1 py-5 text-center sm:px-5">
+            <h1 className="text-4xl font-semibold text-black">
               The social media platform made for{" "}
               <span className="text-blue-700 underline">students.</span>{" "}
             </h1>
-            <p className="text-gray-500 text-sm mt-2">
-              huddle aims to connect current students with alumni and upper
-              years in the same program and university.
+            <p className="mt-2 text-sm text-gray-500">
+              huddle aims to make it easy for current students to connect with
+              alumni and upper years.
             </p>
           </div>
-          <div className="mx-auto justify-center items-center px-1 py-4 sm:px-5">
+          <div className="mx-auto items-center justify-center px-1 py-4 sm:px-5">
             <Image src={mockup} alt="iPhone mockup image" width={350} />
           </div>
         </section>

@@ -3,7 +3,7 @@ import React from "react";
 export default function Login() {
   return (
     <div className="flex min-h-screen">
-      <div className="my-auto mx-auto max-w-screen-xl shadow drop-shadow-sm w-11/12 rounded-md px-4 py-16 md:w-7/12 lg:w-2/5 sm:px-6 lg:px-8">
+      <div className="mx-auto my-auto w-11/12 max-w-screen-xl rounded-md px-4 py-16 shadow drop-shadow-sm sm:px-6 md:w-7/12 lg:w-2/5 lg:px-8">
         <div className="mx-auto max-w-lg text-center">
           <h1 className="text-2xl font-bold text-black sm:text-3xl">
             🔵 huddle
@@ -19,7 +19,7 @@ export default function Login() {
             <div className="relative">
               <input
                 type="email"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm text-gray-900 shadow-sm"
                 placeholder="Enter email"
               />
 
@@ -50,7 +50,7 @@ export default function Login() {
             <div className="relative">
               <input
                 type="password"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm text-gray-900 shadow-sm"
                 placeholder="Enter password"
               />
 
