@@ -1,100 +1,73 @@
+"use client";
+
 import React from "react";
+import { signIn } from "next-auth/react";
 
 export default function Login() {
   return (
-    <div className="flex min-h-screen">
-      <div className="mx-auto my-auto w-11/12 max-w-screen-xl rounded-md px-4 py-16 shadow drop-shadow-sm sm:px-6 md:w-7/12 lg:w-2/5 lg:px-8">
+    <div className="flex min-h-screen bg-gradient-to-b from-cyan-300 via-sky-500 to-blue-800">
+      <div className="mx-auto my-auto w-9/12 max-w-screen-xl rounded-xl bg-white px-4 py-16 shadow drop-shadow-xl sm:px-6 md:w-6/12 lg:w-4/12 lg:px-8">
         <div className="mx-auto max-w-lg text-center">
           <h1 className="text-2xl font-bold text-black sm:text-3xl">
             🔵 huddle
           </h1>
         </div>
-
-        <form action="" className="mx-auto mb-0 mt-8 max-w-md space-y-4">
-          <div>
-            <label htmlFor="email" className="sr-only">
-              Email
-            </label>
-
-            <div className="relative">
-              <input
-                type="email"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm text-gray-900 shadow-sm"
-                placeholder="Enter email"
-              />
-
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 text-gray-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="password" className="sr-only">
-              Password
-            </label>
-
-            <div className="relative">
-              <input
-                type="password"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm text-gray-900 shadow-sm"
-                placeholder="Enter password"
-              />
-
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 text-gray-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between">
-            <p className="text-sm text-gray-500">
-              No account?{" "}
-              <a className="underline" href="">
-                Sign up
-              </a>
-            </p>
-
-            <button
-              type="submit"
-              className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+        <div className="flex items-center justify-center">
+          <button
+            aria-label="Continue with google"
+            role="button"
+            className="mt-10 flex items-center rounded-lg border border-gray-900 px-7 py-3.5 transition hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-1"
+            onClick={() => signIn("google")}
+          >
+            <svg
+              width={19}
+              height={20}
+              viewBox="0 0 19 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Sign in
-            </button>
-          </div>
-        </form>
+              <path
+                d="M18.9892 10.1871C18.9892 9.36767 18.9246 8.76973 18.7847 8.14966H9.68848V11.848H15.0277C14.9201 12.767 14.3388 14.1512 13.047 15.0812L13.0289 15.205L15.905 17.4969L16.1042 17.5173C17.9342 15.7789 18.9892 13.221 18.9892 10.1871Z"
+                fill="#4285F4"
+              />
+              <path
+                d="M9.68813 19.9314C12.3039 19.9314 14.4999 19.0455 16.1039 17.5174L13.0467 15.0813C12.2286 15.6682 11.1306 16.0779 9.68813 16.0779C7.12612 16.0779 4.95165 14.3395 4.17651 11.9366L4.06289 11.9465L1.07231 14.3273L1.0332 14.4391C2.62638 17.6946 5.89889 19.9314 9.68813 19.9314Z"
+                fill="#34A853"
+              />
+              <path
+                d="M4.17667 11.9366C3.97215 11.3165 3.85378 10.6521 3.85378 9.96562C3.85378 9.27905 3.97215 8.6147 4.16591 7.99463L4.1605 7.86257L1.13246 5.44363L1.03339 5.49211C0.37677 6.84302 0 8.36005 0 9.96562C0 11.5712 0.37677 13.0881 1.03339 14.4391L4.17667 11.9366Z"
+                fill="#FBBC05"
+              />
+              <path
+                d="M9.68807 3.85336C11.5073 3.85336 12.7344 4.66168 13.4342 5.33718L16.1684 2.59107C14.4892 0.985496 12.3039 0 9.68807 0C5.89885 0 2.62637 2.23672 1.0332 5.49214L4.16573 7.99466C4.95162 5.59183 7.12608 3.85336 9.68807 3.85336Z"
+                fill="#EB4335"
+              />
+            </svg>
+            <p className="ml-4 text-sm font-medium text-gray-900">
+              Continue with Google
+            </p>
+          </button>
+        </div>
+        <div className="flex items-center justify-center">
+          <button
+            aria-label="Continue with google"
+            role="button"
+            className="mt-3 flex items-center rounded-lg border border-gray-900 px-7 py-3.5 transition hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-1"
+            onClick={() => signIn("github")}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            <p className="ml-4 text-sm font-medium text-gray-900">
+              Continue with Github
+            </p>
+          </button>
+        </div>
       </div>
     </div>
   );
