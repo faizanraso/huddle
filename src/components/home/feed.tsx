@@ -9,7 +9,9 @@ export default function Feed() {
           Home
         </h1>
       </div>
-      <TweetBox />
+      <div className="p-4">
+        <TweetBox />
+      </div>
     </main>
   );
 }
