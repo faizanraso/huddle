@@ -3,17 +3,15 @@ import React from "react";
 
 export default function Sidebar() {
   return (
-    <menu
-      className="border-r-1 w-18 fixed left-0 top-0 z-40 h-screen border px-3 sm:w-52"
+    <aside
+      className="border-r-1 fixed left-0 top-0 z-40 h-screen w-20 border px-3 pt-3 sm:w-64"
       aria-label="Sidebar"
     >
-      <div className="ml-2 mt-2">
-        <Link href={"/home"} className="text-2xl font-semibold">
-          🔵
-        </Link>
-      </div>
+      <Link href={"/home"}>
+        <span className="p-2 text-3xl">🔵</span>
+      </Link>
 
-      <ul className="mt-5 flex flex-col gap-y-2 text-sm text-black">
+      <ul className="mt-3 flex flex-col gap-y-2 text-sm text-black">
         <div className="flex flex-row items-center rounded-full p-2 transition duration-200 ease-in-out hover:bg-gray-200 sm:gap-x-2">
           <svg viewBox="0 0 24 24" aria-hidden="true" className="w-7">
             <path d="M12 9c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4zm0 6c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm0-13.304L.622 8.807l1.06 1.696L3 9.679V19.5C3 20.881 4.119 22 5.5 22h13c1.381 0 2.5-1.119 2.5-2.5V9.679l1.318.824 1.06-1.696L12 1.696zM19 19.5c0 .276-.224.5-.5.5h-13c-.276 0-.5-.224-.5-.5V8.429l7-4.375 7 4.375V19.5z"></path>
@@ -25,7 +23,7 @@ export default function Sidebar() {
         <div className="flex flex-row items-center rounded-full p-2 transition duration-200 ease-in-out hover:bg-gray-200 sm:gap-x-2">
           <svg
             className="w-7"
-            stroke-width="2"
+            strokeWidth="2"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -34,8 +32,8 @@ export default function Sidebar() {
             <path
               d="M22 8.862a5.95 5.95 0 01-1.654 4.13c-2.441 2.531-4.809 5.17-7.34 7.608-.581.55-1.502.53-2.057-.045l-7.295-7.562c-2.205-2.286-2.205-5.976 0-8.261a5.58 5.58 0 018.08 0l.266.274.265-.274A5.612 5.612 0 0116.305 3c1.52 0 2.973.624 4.04 1.732A5.95 5.95 0 0122 8.862z"
               stroke="#000000"
-              stroke-width="2"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinejoin="round"
             ></path>
           </svg>
 
@@ -61,7 +59,7 @@ export default function Sidebar() {
         </div>
         <div className="flex flex-row items-center rounded-full p-2 transition duration-200 ease-in-out hover:bg-gray-200 sm:gap-x-2">
           <svg
-            stroke-width="2"
+            strokeWidth="2"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -70,16 +68,16 @@ export default function Sidebar() {
             <path
               d="M12 15a3 3 0 100-6 3 3 0 000 6z"
               stroke="#000000"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></path>
             <path
               d="M19.622 10.395l-1.097-2.65L20 6l-2-2-1.735 1.483-2.707-1.113L12.935 2h-1.954l-.632 2.401-2.645 1.115L6 4 4 6l1.453 1.789-1.08 2.657L2 11v2l2.401.655L5.516 16.3 4 18l2 2 1.791-1.46 2.606 1.072L11 22h2l.604-2.387 2.651-1.098C16.697 18.831 18 20 18 20l2-2-1.484-1.75 1.098-2.652 2.386-.62V11l-2.378-.605z"
               stroke="#000000"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></path>
           </svg>
           <li className="text-md hidden font-medium transition-transform sm:inline-block">
@@ -96,6 +94,6 @@ export default function Sidebar() {
           </p>
         </div>
       </div>
-    </menu>
+    </aside>
   );
 }
