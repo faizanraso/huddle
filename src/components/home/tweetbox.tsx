@@ -1,15 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 
 import { uniOptions } from "@/utils/unis";
 import { programOptions } from "@/utils/programs";
 
 export default function TweetBox() {
-  const [tweet, setTweet] = useState<String>();
-  const [selectedUni, setSelectedUni] = useState<String>();
-  const [selectedProgram, setSelectedProgram] = useState<String>();
+  const [tweet, setTweet] = useState<String | null>(null);
+  const [selectedUni, setSelectedUni] = useState<String | null>();
+  const [selectedProgram, setSelectedProgram] = useState<String | null>();
+  const [tweetable, setTweetable] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (tweet && selectedProgram && selectedUni) {
+      setTweetable(true);
+    } else {
+      setTweetable(false);
+    }
+  }, [tweet, selectedProgram, selectedUni]);
 
   return (
     <div className="flex flex-col">
@@ -31,19 +40,32 @@ export default function TweetBox() {
         <Select
           className="w-full text-sm text-black"
           defaultValue={selectedUni}
-          onChange={(val) => console.log(val)}
+          onChange={(value) => setSelectedUni(value)}
+          // @ts-ignore
           options={uniOptions}
+          placeholder={"Select a school..."}
         />
         <Select
           className="w-full text-sm text-black"
           defaultValue={selectedProgram}
-          onChange={(val) => console.log(val)}
+          onChange={(value) => setSelectedProgram(value)}
+          // @ts-ignore
           options={programOptions}
+          placeholder={"Select a program..."}
         />
 
-        <button className="rounded-full bg-blue-400 px-3 py-2 font-medium text-white">
-          Tweet
-        </button>
+        {tweetable ? (
+          <button className="rounded-full bg-sky-500 px-4 py-3 text-xs font-semibold text-white transition duration-100 hover:bg-sky-600">
+            Tweet
+          </button>
+        ) : (
+          <button
+            disabled
+            className="rounded-full bg-sky-700 px-4 py-3 text-xs font-semibold text-white"
+          >
+            Tweet
+          </button>
+        )}
       </div>
     </div>
   );

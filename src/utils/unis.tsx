@@ -15,7 +15,10 @@ export const uniOptions = [
     label: "Toronto Metropolitan University",
   },
   { value: "Western University", label: "Western University" },
-  { value: "Wilfrid Laurier University", label: "Wilfrid Laurier University" },
+  {
+    value: "Wilfrid Laurier University",
+    label: "Wilfrid Laurier University",
+  },
   { value: "University of Windsor", label: "University of Windsor" },
   { value: "York University", label: "York University" },
   {
