@@ -1,2 +1,2 @@
 # huddle
-A social media platform to connect students with alumni.
+A social media platform to connect students and alumni.
