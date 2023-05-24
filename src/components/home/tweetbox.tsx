@@ -36,7 +36,7 @@ export default function TweetBox() {
           placeholder="What's up!?"
         />
       </div>
-      <div className="ml-3 flex flex-row place-content-between items-center gap-x-4 px-4 pt-5">
+      <div className="ml-3 flex flex-col place-content-between items-center gap-y-3 px-4 pt-5 md:flex-row md:gap-x-4 md:gap-y-0">
         <Select
           className="w-full text-sm text-black"
           defaultValue={selectedUni}
@@ -55,13 +55,13 @@ export default function TweetBox() {
         />
 
         {tweetable ? (
-          <button className="rounded-full bg-sky-500 px-4 py-3 text-xs font-semibold text-white transition duration-100 hover:bg-sky-600">
+          <button className="rounded-full bg-sky-500 px-8 py-3 text-xs font-semibold text-white transition duration-100 hover:bg-sky-600 ">
             Tweet
           </button>
         ) : (
           <button
             disabled
-            className="rounded-full bg-sky-700 px-4 py-3 text-xs font-semibold text-white"
+            className="rounded-full bg-sky-700 px-8 py-3 text-xs font-semibold text-white"
           >
             Tweet
           </button>
