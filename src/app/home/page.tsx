@@ -1,8 +1,19 @@
+import React from "react";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+
 import Feed from "@/components/home/feed";
 import Sidebar from "@/components/layout/sidebar";
-import React from "react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  const session = await getServerSession(authOptions);
+
+  if (!session) {
+    redirect("/api/auth/signin");
+  }
+
   return (
     <>
       <Sidebar />
