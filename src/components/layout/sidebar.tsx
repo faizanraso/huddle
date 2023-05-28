@@ -1,3 +1,6 @@
+"use client";
+
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
@@ -84,14 +87,39 @@ export default function Sidebar() {
             settings &nbsp;
           </li>
         </div>
+        <button onClick={() => signOut()}>
+          <div className="flex w-fit flex-row items-center rounded-full p-2 transition duration-200 ease-in-out hover:bg-gray-200 sm:gap-x-2">
+            <svg
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="#D32F2F"
+              className="w-7"
+            >
+              <path
+                d="M12 7v10M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
+                stroke="#D32F2F"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <li className="text-md hidden font-medium text-red-700 transition-transform sm:inline-block">
+              sign out &nbsp;
+            </li>
+          </div>
+        </button>
       </ul>
 
       <div className="fixed bottom-3 flex flex-row items-center rounded-full px-2 py-2 hover:bg-gray-200 sm:gap-x-2">
         <div className="h-9 w-9 rounded-full bg-blue-500 text-blue-500">.</div>
-        <div className="flex flex-row items-center justify-center ">
-          <p className="hidden pr-2 text-xs font-medium text-black transition-transform sm:inline">
-            Faizan Rasool
-          </p>
+        <div className="hidden flex-row items-center justify-between sm:flex">
+          <div className="px-1">
+            <p className=" pr-1 text-xs font-medium text-black transition-transform ">
+              Faizan Rasool
+            </p>
+          </div>
         </div>
       </div>
     </aside>

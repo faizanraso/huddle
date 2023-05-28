@@ -1,9 +1,26 @@
 "use client";
 
 import React from "react";
-import { signIn, signOut } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
-export default function Login() {
+export default async function Login() {
+  const { data: session, status } = useSession({
+    required: true,
+  });
+
+  if (status === "authenticated") {
+    redirect("/home");
+  }
+
+  function loginWithGithub() {
+    signIn("github", { callbackUrl: `${window.location.origin}/home` });
+  }
+
+  async function loginWithGoogle() {
+    signIn("google", { callbackUrl: `${window.location.origin}/home` });
+  }
+
   return (
     <div className="flex min-h-screen bg-gradient-to-b from-cyan-300 via-sky-500 to-blue-800">
       <div className="mx-auto my-auto w-9/12 max-w-screen-xl rounded-xl bg-white px-4 py-16 shadow drop-shadow-xl sm:px-6 md:w-6/12 lg:w-4/12 lg:px-8">
@@ -17,7 +34,7 @@ export default function Login() {
             aria-label="Continue with google"
             role="button"
             className="mt-10 flex items-center rounded-lg border border-gray-900 px-7 py-3.5 transition hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-1"
-            onClick={() => signIn("google")}
+            onClick={() => loginWithGoogle()}
           >
             <svg
               width={19}
@@ -53,7 +70,7 @@ export default function Login() {
             aria-label="Continue with google"
             role="button"
             className="mt-3 flex items-center rounded-lg border border-gray-900 px-7 py-3.5 transition hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-1"
-            onClick={() => signIn("github")}
+            onClick={() => loginWithGithub()}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
