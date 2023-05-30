@@ -90,7 +90,7 @@ export default function Sidebar() {
         <button onClick={() => signOut()}>
           <div className="flex w-fit flex-row items-center rounded-full p-2 transition duration-200 ease-in-out hover:bg-gray-200 sm:gap-x-2">
             <svg
-              stroke-width="2"
+              strokeWidth="2"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -100,9 +100,9 @@ export default function Sidebar() {
               <path
                 d="M12 7v10M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
                 stroke="#D32F2F"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>
             </svg>
             <li className="text-md hidden font-medium text-red-700 transition-transform sm:inline-block">
