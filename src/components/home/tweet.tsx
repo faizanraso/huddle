@@ -6,19 +6,17 @@ export default function Tweet(props: {
   image: string;
 }) {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between p-1">
       <div className="flex items-center justify-center gap-x-3 px-4">
-        <div className="">
-          <Image
-            className="rounded-full"
-            src={props.image}
-            alt="user profile picture"
-            width={40}
-            height={40}
-          />
-        </div>
-        <div className="flex flex-col gap-y-0.5">
-          <div className="block w-10/12">
+        <Image
+          className="rounded-full"
+          src={props.image}
+          alt="user profile picture"
+          width={40}
+          height={40}
+        />
+        <div className="flex w-full flex-col gap-y-0.5">
+          <div className="block w-full">
             <p className="px-2.5 text-sm font-medium text-gray-900">
               {props.user}
             </p>

@@ -55,6 +55,7 @@ export default function TweetBox(props: { image: string }) {
           height={40}
         />
         <textarea
+          maxLength={175}
           id="tweetbox"
           onChange={(e) => {
             setTweet(e.target.value);

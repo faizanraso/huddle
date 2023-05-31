@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]/route";
 
@@ -27,6 +27,8 @@ export async function POST(req: Request, res: NextApiResponse) {
       data: {
         userId: user!.id,
         text: tweet,
+        school: selectedUni.label,
+        program: selectedProgram.label,
       },
     });
   } catch (error) {
