@@ -19,7 +19,7 @@ export default function Tweet(props: {
         </div>
         <div className="flex flex-col gap-y-0.5">
           <div className="block w-10/12">
-            <p className="text-medium px-2.5 text-sm text-gray-900">
+            <p className="px-2.5 text-sm font-medium text-gray-900">
               {props.user}
             </p>
           </div>

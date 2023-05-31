@@ -21,6 +21,29 @@ export default function TweetBox(props: { image: string }) {
     }
   }, [tweet, selectedProgram, selectedUni]);
 
+  async function publishTweet() {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        tweet,
+        selectedUni,
+        selectedProgram,
+      }),
+    };
+
+    try {
+      const response = await fetch("/api/publishtweet", requestOptions);
+      if (response.ok) {
+        console.log("success");
+      } else {
+        console.error("Failed to publish tweet");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-center gap-x-3 px-4">
@@ -60,7 +83,10 @@ export default function TweetBox(props: { image: string }) {
         />
 
         {tweetable ? (
-          <button className="rounded-full bg-sky-500 px-8 py-3 text-xs font-semibold text-white transition duration-100 hover:bg-sky-600 ">
+          <button
+            onClick={publishTweet}
+            className="rounded-full bg-sky-500 px-8 py-3 text-xs font-semibold text-white transition duration-100 hover:bg-sky-600 "
+          >
             Tweet
           </button>
         ) : (

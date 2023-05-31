@@ -1,5 +1,4 @@
 import React from "react";
-import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 import Feed from "@/components/home/feed";
