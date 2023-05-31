@@ -2,11 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
+import Image from "next/image";
 
 import { uniOptions } from "@/utils/unis";
 import { programOptions } from "@/utils/programs";
 
-export default function TweetBox() {
+export default function TweetBox(props: { image: string }) {
   const [tweet, setTweet] = useState<String | null>(null);
   const [selectedUni, setSelectedUni] = useState<String | null>();
   const [selectedProgram, setSelectedProgram] = useState<String | null>();
@@ -23,9 +24,13 @@ export default function TweetBox() {
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-center gap-x-3 px-4">
-        <div className="h-12 w-12 rounded-full bg-blue-500 text-blue-500">
-          .
-        </div>
+        <Image
+          className="rounded-full"
+          src={props.image}
+          alt="user profile picture"
+          width={40}
+          height={40}
+        />
         <textarea
           id="tweetbox"
           onChange={(e) => {

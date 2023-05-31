@@ -4,7 +4,7 @@ import TweetBox from "./tweetbox";
 import Tweet from "./tweet";
 import prisma from "@/lib/prisma";
 
-export default async function Feed() {
+export default async function Feed(props: { image: string }) {
   const tweets = await prisma.tweet.findMany({
     include: { user: true },
   });
@@ -17,7 +17,7 @@ export default async function Feed() {
         </h1>
       </section>
       <section className="p-4">
-        <TweetBox />
+        <TweetBox image={props.image} />
       </section>
       <section id="tweets-section">
         {tweets.map((val, index) => (

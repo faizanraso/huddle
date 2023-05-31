@@ -17,7 +17,7 @@ export default async function Dashboard() {
   return (
     <>
       <Sidebar name={session?.user?.name!} image={session.user?.image!} />
-      <Feed />
+      <Feed image={session.user?.image!} />
     </>
   );
 }
