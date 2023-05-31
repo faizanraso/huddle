@@ -1,4 +1,4 @@
-export default function Tweet() {
+export default function Tweet(props: { user: string; tweetText: string }) {
   return (
     <div className="flex justify-between">
       <div className="flex items-center justify-center gap-x-3 px-4">
@@ -8,11 +8,11 @@ export default function Tweet() {
         <div className="flex flex-col gap-y-0.5">
           <div className="block w-10/12">
             <p className="text-medium px-2.5 text-sm text-gray-900">
-              Tweeter Name
+              {props.user}
             </p>
           </div>
           <div className="block w-full resize-none rounded-lg px-2.5 text-sm text-gray-900 ">
-            <p>This is where the tweet text will go</p>
+            <p>{props.tweetText}</p>
           </div>
         </div>
       </div>
