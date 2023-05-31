@@ -1,8 +1,14 @@
 import React from "react";
+
 import TweetBox from "./tweetbox";
 import Tweet from "./tweet";
+import prisma from "@/lib/prisma";
 
-export default function Feed() {
+export default async function Feed() {
+  const tweets = await prisma.tweet.findMany({
+    include: { user: true },
+  });
+
   return (
     <main className="border-r-1 w-100 ml-20 h-screen border sm:ml-64 lg:w-6/12">
       <section className="p-3">
@@ -14,10 +20,11 @@ export default function Feed() {
         <TweetBox />
       </section>
       <section id="tweets-section">
-        {/* loop the following div to display tweets */}
-        <div className="border p-4">
-          <Tweet />
-        </div>
+        {tweets.map((val, index) => (
+          <div className="border p-4" key={index}>
+            <Tweet tweetText={val.text} user={val.user.name!} />
+          </div>
+        ))}
       </section>
     </main>
   );
