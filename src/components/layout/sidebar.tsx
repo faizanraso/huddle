@@ -1,10 +1,11 @@
 "use client";
 
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function Sidebar() {
+export default function Sidebar(props: { name: string; image: string }) {
   return (
     <aside
       className="border-r-1 fixed left-0 top-0 z-40 h-screen w-20 border px-3 pt-3 sm:w-64"
@@ -113,11 +114,17 @@ export default function Sidebar() {
       </ul>
 
       <div className="fixed bottom-3 flex flex-row items-center rounded-full px-2 py-2 hover:bg-gray-200 sm:gap-x-2">
-        <div className="h-9 w-9 rounded-full bg-blue-500 text-blue-500">.</div>
+        <Image
+          className="rounded-full"
+          src={props.image}
+          width={40}
+          height={40}
+          alt="user profile image"
+        />
         <div className="hidden flex-row items-center justify-between sm:flex">
           <div className="px-1">
             <p className=" pr-1 text-xs font-medium text-black transition-transform ">
-              Faizan Rasool
+              {props.name}
             </p>
           </div>
         </div>
