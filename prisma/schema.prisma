@@ -62,10 +62,13 @@ model VerificationToken {
 }
 
 model Tweet {
-  id     String @id @default(cuid())
-  text   String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId String
+  id       String   @id @default(cuid())
+  text     String   @db.VarChar(240)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   String
+  postTime DateTime @default(now())
+  school   String   @db.VarChar(50)
+  program  String   @db.VarChar(50)
 
   @@index([userId])
 }

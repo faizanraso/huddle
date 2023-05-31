@@ -10,7 +10,7 @@ export default async function Feed(props: { image: string }) {
   });
 
   return (
-    <main className="border-r-1 w-100 ml-20 h-screen border sm:ml-64 lg:w-6/12">
+    <main className="border-r-1 w-100 ml-20 min-h-screen border sm:ml-64 lg:w-6/12">
       <section className="p-3">
         <h1 className="items-center text-center font-semibold text-black">
           home
