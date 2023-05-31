@@ -22,7 +22,12 @@ export default async function Feed() {
       <section id="tweets-section">
         {tweets.map((val, index) => (
           <div className="border p-4" key={index}>
-            <Tweet tweetText={val.text} user={val.user.name!} />
+            <Tweet
+              key={index}
+              tweetText={val.text}
+              user={val.user.name!}
+              image={val.user.image!}
+            />
           </div>
         ))}
       </section>

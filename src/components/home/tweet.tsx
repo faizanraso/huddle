@@ -1,9 +1,21 @@
-export default function Tweet(props: { user: string; tweetText: string }) {
+import Image from "next/image";
+
+export default function Tweet(props: {
+  user: string;
+  tweetText: string;
+  image: string;
+}) {
   return (
     <div className="flex justify-between">
       <div className="flex items-center justify-center gap-x-3 px-4">
-        <div className="h-12 w-12 rounded-full bg-blue-500 text-blue-500">
-          .
+        <div className="">
+          <Image
+            className="rounded-full"
+            src={props.image}
+            alt="user profile picture"
+            width={40}
+            height={40}
+          />
         </div>
         <div className="flex flex-col gap-y-0.5">
           <div className="block w-10/12">
