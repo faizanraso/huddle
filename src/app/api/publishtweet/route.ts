@@ -3,12 +3,6 @@ import { NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]/route";
 
-export const config = {
-  api: {
-    bodyParser: true,
-  },
-};
-
 export async function POST(req: Request, res: NextApiResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
